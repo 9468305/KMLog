@@ -1,6 +1,11 @@
 KMLog
 --------
-Kotlin Multiplatform / Mobile Logging
+Kotlin Multiplatform/Mobile Log
+
+Develop
+--------
+IntelliJ IDEA, `Kotlin/Mobile Shared Library | Gradle` template.  
+> Multiplatform Gradle project allowing reuse of the same Kotlin code between two mobile platforms (JVM/Android and Native)
 
 License
 --------
