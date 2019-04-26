@@ -1,6 +1,6 @@
 package app.chenqi
 
-actual object LogImpl {
+actual object Log {
     actual fun v(tag: String, msg: String): Int {
         return 0
     }

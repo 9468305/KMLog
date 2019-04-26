@@ -2,9 +2,9 @@ package app.chenqi
 
 import kotlin.test.Test
 
-class LogImplTests {
+class LogImplTest {
     @Test
     fun testLog() {
-        LogImpl.d("Android", "d")
+        Log.d("Android", "d")
     }
 }

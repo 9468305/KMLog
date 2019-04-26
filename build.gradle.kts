@@ -7,7 +7,6 @@ buildscript {
 plugins {
     kotlin("multiplatform") version("1.3.30")
     id("com.android.library")
-    //id("kotlin-android")
 }
 repositories {
     google()
@@ -24,7 +23,6 @@ apply {
 android {
     compileSdkVersion(28)
     defaultConfig {
-        //applicationId = "app.chenqi.log"
         minSdkVersion(21)
         targetSdkVersion(28)
         versionCode = 1
@@ -67,10 +65,8 @@ kotlin {
         }
         named("androidTest") {
             dependencies {
-                //implementation(kotlin("stdlib-jdk7"))
                 implementation(kotlin("test"))
                 implementation(kotlin("test-junit"))
-                //implementation("junit:junit:4.12")
             }
         }
         named("iosMain") {

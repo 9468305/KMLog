@@ -1,6 +1,6 @@
 package app.chenqi
 
-actual object LogImpl {
+actual object Log {
     actual fun v(tag: String, msg: String): Int = android.util.Log.v(tag, msg)
     actual fun d(tag: String, msg: String): Int = android.util.Log.d(tag, msg)
     actual fun i(tag: String, msg: String): Int = android.util.Log.i(tag, msg)

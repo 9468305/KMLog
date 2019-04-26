@@ -1,6 +1,6 @@
 package app.chenqi
 
-expect object LogImpl {
+expect object Log {
     fun v(tag: String, msg: String): Int
     fun d(tag: String, msg: String): Int
     fun i(tag: String, msg: String): Int
