@@ -1,13 +1,15 @@
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.0")
-        classpath(kotlin("gradle-plugin", version = "1.3.30"))
+        classpath(kotlin("gradle-plugin", "1.3.30"))
     }
 }
+
 plugins {
     kotlin("multiplatform") version("1.3.30")
     id("com.android.library")
 }
+
 repositories {
     google()
     jcenter()
@@ -34,6 +36,9 @@ android {
             isShrinkResources = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
+    }
+    testOptions {
+        unitTests.setIncludeAndroidResources(true)
     }
 }
 
@@ -67,6 +72,13 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-junit"))
+                implementation("org.robolectric:robolectric:4.2")
+                /*
+                implementation("androidx.test:core:1.1.0")
+                implementation("androidx.test.ext:junit:1.1.0")
+                implementation("androidx.test:runner:1.1.1")
+                implementation("androidx.test:rules:1.1.1")*/
+
             }
         }
         named("iosMain") {
