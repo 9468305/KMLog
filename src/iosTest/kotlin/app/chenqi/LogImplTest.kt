@@ -5,7 +5,7 @@ import kotlin.test.assertTrue
 
 class LogImplTest {
     @Test
-    fun testHello() {
+    fun testLog() {
         //assertTrue("iOS" in hello())
     }
 }
