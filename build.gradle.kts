@@ -100,20 +100,17 @@ kotlin {
     }
 }
 
-/*
-task iosTest {
-    def device = project.findProperty("iosDevice")?.toString() ?: "iPhone 8"
-    dependsOn kotlin.targets.ios.binaries.getExecutable('test', 'DEBUG').linkTaskName
+tasks.register("iosTest") {
+    //kotlin.targets["ios"].let { it as KotlinNativeTarget }.binaries.getExecutable("test", "DEBUG").outputFile
     group = JavaBasePlugin.VERIFICATION_GROUP
-    description = "Runs tests for target 'ios' on an iOS simulator"
-
+    description = "Run tests for target iOS on simulator"
+    val ios = kotlin.iosX64("ios")
     doLast {
-        def binary = kotlin.targets.ios.binaries.getExecutable('test', 'DEBUG').outputFile
+        val binary = ios.binaries.getExecutable("test", "Debug").outputFile
         exec {
-            commandLine 'xcrun', 'simctl', 'spawn', device, binary.absolutePath
+            commandLine("xcrun", "simctl", "spawn", "iPhone 8", binary.absolutePath)
         }
     }
 }
 
-*/
 configurations.create("compileClasspath")
