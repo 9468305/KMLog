@@ -1,4 +1,4 @@
-KMLog
+log-kotlin-mpp
 --------
 Kotlin Multiplatform Log library
 
