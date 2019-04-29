@@ -1,6 +1,6 @@
 KMLog
 --------
-Kotlin Multiplatform/Mobile Log
+Kotlin Multiplatform Log library
 
 Develop
 --------
