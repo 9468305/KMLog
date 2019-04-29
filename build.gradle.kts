@@ -101,6 +101,7 @@ kotlin {
 }
 
 tasks.register("iosTest") {
+    mustRunAfter("test")
     //kotlin.targets["ios"].let { it as KotlinNativeTarget }.binaries.getExecutable("test", "DEBUG").outputFile
     group = JavaBasePlugin.VERIFICATION_GROUP
     description = "Run tests for target iOS on simulator"
@@ -111,6 +112,11 @@ tasks.register("iosTest") {
             commandLine("xcrun", "simctl", "spawn", "iPhone 8", binary.absolutePath)
         }
     }
+}
+
+tasks.named("check") {
+    dependsOn("iosTest")
+    //finalizedBy("iosTest")
 }
 
 configurations.create("compileClasspath")
