@@ -1,12 +1,12 @@
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.0")
-        classpath(kotlin("gradle-plugin", "1.3.30"))
+        classpath(kotlin("gradle-plugin", "1.3.31"))
     }
 }
 
 plugins {
-    kotlin("multiplatform") version("1.3.30")
+    kotlin("multiplatform") version("1.3.31")
     id("com.android.library")
 }
 
