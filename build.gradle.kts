@@ -43,6 +43,7 @@ android {
 }
 
 kotlin {
+    jvm()
     android()
     // This is for iPhone emulator
     // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
@@ -61,6 +62,17 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+            }
+        }
+        named("jvmMain") {
+            dependencies {
+                implementation(kotlin("stdlib-jdk8"))
+            }
+        }
+        named("jvmTest") {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(kotlin("test-junit"))
             }
         }
         named("androidMain") {
