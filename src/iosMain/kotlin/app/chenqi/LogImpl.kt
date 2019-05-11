@@ -18,5 +18,5 @@ actual object Log {
     actual fun i(tag: String, msg: String) = println("${time()} | I | $tag | $msg")
     actual fun w(tag: String, msg: String) = println("${time()} | W | $tag | $msg")
     actual fun e(tag: String, msg: String) = println("${time()} | E | $tag | $msg")
-    actual fun wtf(tag: String, msg: String) = NSLog("A | $tag | $msg")
+    actual fun wtf(tag: String, msg: String) = NSLog("$tag | $msg")
 }

@@ -1,7 +1,7 @@
 package app.chenqi
 
-import java.util.logging.*
 import java.util.logging.Level
+import java.util.logging.Logger
 
 actual object Log {
     private val logger = Logger.getLogger("jvmTest")

@@ -1,10 +1,16 @@
 log-kotlin-mpp
 --------
-Kotlin Multiplatform Log library
+A demo of Kotlin Multiplatform Log library project.
+
+Recommend [JakeWharton/timber](https://github.com/JakeWharton/timber) for real world.
 
 Develop
 --------
-IntelliJ IDEA, `Kotlin/Mobile Shared Library | Gradle` template.  
++ `IntelliJ IDEA 2019.1.2`
++ `Kotlin 1.3.31`
++ `Gradle 5.4.1-all`
++ Setup `Android SDK Location`
++ Project Template: `Kotlin/Mobile Shared Library | Gradle`
 > Multiplatform Gradle project allowing reuse of the same Kotlin code between two mobile platforms (JVM/Android and Native)
 
 License

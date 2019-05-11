@@ -1,6 +1,5 @@
 package app.chenqi
 
-import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -34,8 +33,4 @@ open class LogTest {
         Log.e(tag, "Error")
         Log.wtf(tag, "Assert")
     }
-
-    @Test
-    fun skip() = println("Skip")
-
 }

@@ -101,7 +101,7 @@ kotlin {
 }
 
 tasks.register("iosTest") {
-    mustRunAfter("test")
+    mustRunAfter("linkTestDebugExecutableIos")
     //kotlin.targets["ios"].let { it as KotlinNativeTarget }.binaries.getExecutable("test", "DEBUG").outputFile
     group = JavaBasePlugin.VERIFICATION_GROUP
     description = "Run tests for target iOS on simulator"
