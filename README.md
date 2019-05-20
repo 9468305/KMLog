@@ -9,6 +9,7 @@ Develop
 + `IntelliJ IDEA 2019.1.2`
 + `Kotlin 1.3.31`
 + `Gradle 5.4.1-all`
++ `com.android.tools.build:gradle:3.4.1`
 + Setup `Android SDK Location`
 + Project Template: `Kotlin/Mobile Shared Library | Gradle`
 > Multiplatform Gradle project allowing reuse of the same Kotlin code between two mobile platforms (JVM/Android and Native)
