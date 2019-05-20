@@ -1,6 +1,9 @@
 package app.chenqi
 
-enum class Level(val number: Int) {
+/**
+ * Keep consistent with android.utl.log constant level.
+ * */
+enum class Level(val value: Int) {
     VERBOSE(2),
     DEBUG(3),
     INFO(4),
@@ -10,7 +13,6 @@ enum class Level(val number: Int) {
 }
 
 expect object Log {
-    var level: Level
     fun isLoggable(tag: String, level: Level): Boolean
     fun v(tag: String, msg: String)
     fun d(tag: String, msg: String)
