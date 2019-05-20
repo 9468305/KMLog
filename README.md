@@ -1,4 +1,4 @@
-log-kotlin-mpp
+log-kotlin
 --------
 A demo of Kotlin Multiplatform Log library project.
 

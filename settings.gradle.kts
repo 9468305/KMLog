@@ -16,7 +16,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = "log-kotlin-mpp"
+rootProject.name = "log-kotlin"
 
 
 enableFeaturePreview("GRADLE_METADATA")
