@@ -19,9 +19,9 @@ private fun app.chenqi.Level.fromPlatform(level: Level): app.chenqi.Level =
 
 private fun app.chenqi.Level.toPlatform(): Level =
     when (this) {
-        app.chenqi.Level.VERBOSE -> Level.FINER
-        app.chenqi.Level.DEBUG -> Level.FINE
-        app.chenqi.Level.INFO -> Level.CONFIG
+        app.chenqi.Level.VERBOSE -> Level.FINEST
+        app.chenqi.Level.DEBUG -> Level.CONFIG
+        app.chenqi.Level.INFO -> Level.INFO
         app.chenqi.Level.WARN -> Level.INFO
         app.chenqi.Level.ERROR -> Level.WARNING
         app.chenqi.Level.ASSERT -> Level.SEVERE
