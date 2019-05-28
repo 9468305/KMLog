@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.1")
@@ -45,6 +47,11 @@ android {
 kotlin {
     jvm()
     android()
+    androidNativeArm32() {
+        binaries {
+            sharedLib()
+        }
+    }
     // This is for iPhone emulator
     // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
     iosX64("ios") {
@@ -96,6 +103,11 @@ kotlin {
         named("iosMain") {
         }
         named("iosTest") {
+        }
+        named("androidNativeArm32Main") {
+            dependencies {
+                //implementation()
+            }
         }
     }
 }

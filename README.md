@@ -14,6 +14,11 @@ Develop
 + Project Template: `Kotlin/Mobile Shared Library | Gradle`
 > Multiplatform Gradle project allowing reuse of the same Kotlin code between two mobile platforms (JVM/Android and Native)
 
+
+> nm -g liblog_kotlin.so
+
+> $ANDROID_NDK/toolchains/llvm/prebuilt/darwin-x86_64/arm-linux-androideabi/bin/strip --strip-all liblog_kotlin.so
+
 License
 --------
 ```
