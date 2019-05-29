@@ -2,6 +2,7 @@ package app.chenqi
 
 import platform.android.*
 
+@kotlin.ExperimentalUnsignedTypes
 actual object Log {
     actual fun isLoggable(tag: String, level: Level): Boolean  = level >= Level.INFO
     actual fun v(tag: String, msg: String) {__android_log_print(ANDROID_LOG_VERBOSE.toInt(), tag, "%s", msg)}
