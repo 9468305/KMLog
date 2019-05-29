@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.1")
@@ -49,7 +47,9 @@ kotlin {
     android()
     androidNativeArm32() {
         binaries {
-            sharedLib()
+            sharedLib {
+                baseName = "log"
+            }
         }
     }
     // This is for iPhone emulator
@@ -105,9 +105,8 @@ kotlin {
         named("iosTest") {
         }
         named("androidNativeArm32Main") {
-            dependencies {
-                //implementation()
-            }
+        }
+        named("androidNativeArm32Test") {
         }
     }
 }
@@ -126,9 +125,25 @@ tasks.register("iosTest") {
     }
 }
 
+tasks.register("androidNativeArm32Test") {
+    //TODO: test executable file is not executable, but a so file.
+    mustRunAfter("linkTestDebugExecutableAndroidNativeArm32")
+    group = JavaBasePlugin.VERIFICATION_GROUP
+    description = "Run tests for target Android Native on simulator/device"
+    val an = kotlin.androidNativeArm32()
+    doLast {
+        val binary = an.binaries.getExecutable("test", "Debug").outputFile
+        val adb = android.adbExecutable
+        exec {
+            commandLine(adb.absolutePath, "push", binary.absolutePath, "/data/local/tmp/${binary.name}")
+            commandLine(adb.absolutePath, "shell", "/data/local/tmp/${binary.name}")
+        }
+    }
+}
+
 tasks.named("check") {
     dependsOn("iosTest")
-    //finalizedBy("iosTest")
+    //dependsOn("androidNativeArm32Test")
 }
 
 configurations.create("compileClasspath")
