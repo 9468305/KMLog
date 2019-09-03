@@ -1,12 +1,12 @@
 buildscript {
     dependencies {
-        classpath("com.android.tools.build:gradle:3.4.1")
-        classpath(kotlin("gradle-plugin", "1.3.31"))
+        classpath("com.android.tools.build:gradle:3.5.0")
+        classpath(kotlin("gradle-plugin", "1.3.50"))
     }
 }
 
 plugins {
-    kotlin("multiplatform") version("1.3.31")
+    kotlin("multiplatform") version("1.3.50")
     id("com.android.library")
 }
 
@@ -52,13 +52,8 @@ kotlin {
             }
         }
     }
-    // This is for iPhone emulator
-    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
-    iosX64("ios") {
-        binaries {
-            framework()
-        }
-    }
+    iosX64()
+    iosArm64()
     sourceSets {
         commonMain {
             dependencies {
@@ -100,17 +95,29 @@ kotlin {
 
             }
         }
-        named("iosMain") {
+        /*
+        named("nativeMain") {
+            dependsOn "commonMain"
         }
-        named("iosTest") {
+        named("iosX64Main") {
+            dependsOn("nativeMain")
         }
+        named("iosX64Test") {
+
+        }
+        named("iosArm64Main") {
+
+        }
+        named("iosArm64Test") {
+
+        }*/
         named("androidNativeArm32Main") {
         }
         named("androidNativeArm32Test") {
         }
     }
 }
-
+/*
 tasks.register("iosTest") {
     mustRunAfter("linkTestDebugExecutableIos")
     //kotlin.targets["ios"].let { it as KotlinNativeTarget }.binaries.getExecutable("test", "DEBUG").outputFile
@@ -145,5 +152,5 @@ tasks.named("check") {
     dependsOn("iosTest")
     //dependsOn("androidNativeArm32Test")
 }
-
+*/
 configurations.create("compileClasspath")

@@ -5,7 +5,7 @@ pluginManagement {
                 useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
             }
             if (requested.id.id == "com.android.library") {
-                useModule("com.android.tools.build:gradle:3.4.1")
+                useModule("com.android.tools.build:gradle:3.5.0")
             }
         }
     }
