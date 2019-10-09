@@ -1,13 +1,14 @@
 buildscript {
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.0")
+        classpath("com.android.tools.build:gradle:3.5.1")
         classpath(kotlin("gradle-plugin", "1.3.50"))
     }
 }
 
 plugins {
     kotlin("multiplatform") version("1.3.50")
-    id("com.android.library")
+    id("com.android.library") version("3.5.1")
+    id("maven-publish")
 }
 
 repositories {
@@ -17,10 +18,6 @@ repositories {
 }
 group = "app.chenqi"
 version = "0.1.0"
-
-apply {
-    plugin("maven-publish")
-}
 
 android {
     compileSdkVersion(28)
@@ -52,8 +49,8 @@ kotlin {
             }
         }
     }
+    iosArm64("ios")
     iosX64()
-    iosArm64()
     sourceSets {
         commonMain {
             dependencies {
@@ -95,22 +92,17 @@ kotlin {
 
             }
         }
-        /*
-        named("nativeMain") {
-            dependsOn "commonMain"
+        val iosMain by getting {
         }
-        named("iosX64Main") {
-            dependsOn("nativeMain")
-        }
-        named("iosX64Test") {
 
+        val iosTest by getting {
         }
-        named("iosArm64Main") {
-
+        val iosX64Main by getting {
+            dependsOn(iosMain)
         }
-        named("iosArm64Test") {
-
-        }*/
+        val iosX64Test by getting {
+            dependsOn(iosTest)
+        }
         named("androidNativeArm32Main") {
         }
         named("androidNativeArm32Test") {

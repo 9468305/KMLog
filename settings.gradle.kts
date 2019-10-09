@@ -1,11 +1,9 @@
 pluginManagement {
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id == "kotlin-multiplatform") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-            if (requested.id.id == "com.android.library") {
-                useModule("com.android.tools.build:gradle:3.5.0")
+            when (requested.id.id) {
+                "org.jetbrains.kotlin.multiplatform" -> useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+                "com.android.library" -> useModule("com.android.tools.build:gradle:${requested.version}")
             }
         }
     }
