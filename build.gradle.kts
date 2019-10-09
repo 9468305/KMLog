@@ -8,7 +8,7 @@ buildscript {
 plugins {
     kotlin("multiplatform") version("1.3.50")
     id("com.android.library") version("3.5.1")
-    id("maven-publish")
+    //id("maven-publish")
 }
 
 repositories {
@@ -35,7 +35,7 @@ android {
         }
     }
     testOptions {
-        unitTests.setIncludeAndroidResources(true)
+        unitTests.isIncludeAndroidResources = true
     }
 }
 
@@ -49,8 +49,20 @@ kotlin {
             }
         }
     }
-    iosArm64("ios")
-    iosX64()
+    iosArm64("ios") {
+        binaries {
+            framework {
+                baseName = "log"
+            }
+        }
+    }
+    iosX64() {
+        binaries {
+            framework {
+                baseName = "log"
+            }
+        }
+    }
     sourceSets {
         commonMain {
             dependencies {
