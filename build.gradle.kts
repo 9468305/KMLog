@@ -1,4 +1,9 @@
 buildscript {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+    }
     dependencies {
         classpath("com.android.tools.build:gradle:3.5.1")
         classpath(kotlin("gradle-plugin", "1.3.50"))
@@ -8,7 +13,7 @@ buildscript {
 plugins {
     kotlin("multiplatform") version("1.3.50")
     id("com.android.library") version("3.5.1")
-    //id("maven-publish")
+    id("maven-publish")
 }
 
 repositories {
@@ -16,11 +21,13 @@ repositories {
     jcenter()
     mavenCentral()
 }
+
 group = "app.chenqi"
 version = "0.1.0"
 
 android {
     compileSdkVersion(28)
+    buildToolsVersion = "29.0.2"
     defaultConfig {
         minSdkVersion(21)
         targetSdkVersion(28)
